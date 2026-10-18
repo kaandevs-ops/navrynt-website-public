@@ -70,6 +70,32 @@ if (ROOT/'site').exists():
  for entry in catalogue:
   for name in [entry['video'],entry['poster'],f"assets/recordings/{entry['id']}.vtt"]:
    if not (SITE/name).is_file():errors.append(f'Missing recording asset: {name}')
+features_path=SITE/'features.json'
+if features_path.exists():
+ feature_data=json.loads(features_path.read_text())
+ entries=feature_data['features'];groups=feature_data['categories']
+ feature_ids=[entry['id'] for entry in entries];group_ids=[group['id'] for group in groups]
+ if len(feature_ids)!=len(set(feature_ids)) or len(group_ids)!=len(set(group_ids)):errors.append('Duplicate feature or group identifier')
+ feature_page=(SITE/'features.html').resolve()
+ rendered_ids=set(parsed[feature_page].ids) if feature_page in parsed else set()
+ guides={lang:(ROOT/'docs'/filename).read_text() for lang,filename in [('en','FULL-PRODUCT.md'),('tr','FULL-PRODUCT.tr.md')]}
+ for entry in entries:
+  if entry['category'] not in group_ids:errors.append(f'Unknown feature group: {entry["id"]}')
+  if entry['evidence'] not in ['code','demo','recorded']:errors.append(f'Unknown evidence label: {entry["id"]}')
+  if 'feature-'+entry['id'] not in rendered_ids:errors.append(f'Missing feature card: {entry["id"]}')
+  if entry['evidence']=='recorded' and entry.get('recording') not in identifiers:errors.append(f'Feature without original recording: {entry["id"]}')
+  for field in ['title','description','requirements','limit']:
+   if any(not entry[field].get(lang,'').strip() for lang in ['en','tr']):errors.append(f'Missing feature translation: {entry["id"]}/{field}')
+  for lang in ['en','tr']:
+   if entry['title'][lang] not in guides[lang]:errors.append(f'Missing guide entry: {entry["id"]}/{lang}')
+ actions=feature_data.get('modelStudioCatalog',[])
+ if sum(len(modality['actions']) for modality in actions)!=32:errors.append('Model Studio declared action catalogue changed; update the documented scope')
+ for modality in actions:
+  action_ids=[action['id'] for action in modality['actions']]
+  if len(action_ids)!=len(set(action_ids)):errors.append(f'Duplicate lifecycle action: {modality["id"]}')
+ for group_id in group_ids:
+  if 'group-'+group_id not in rendered_ids:errors.append(f'Missing feature group: {group_id}')
+ if f"{len(entries)} feature entries" not in guides['en'] or f"{len(entries)} özellik girdisi" not in guides['tr']:errors.append('Feature guide counts differ from catalogue')
 all_media=ROOT/'docs/MEDIA-SHA256.json'
 if all_media.exists():
  for name,digest in json.loads(all_media.read_text()).items():
