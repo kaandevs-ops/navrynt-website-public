@@ -26,3 +26,7 @@ Set Pages source to **GitHub Actions**. The deployment job uses the `github-page
 `site/config.js` controls cross-project link destinations. Canonical and social sharing URLs in the HTML use the website's own Pages address. Keep these aligned if repository names change. Relative asset paths work below the repository prefix.
 
 The static website displays historical application captures and links to a separate browser-local demo. It does not run the full application, query intelligence providers or execute biometric models. No private application source, signing material, credentials, model weights or identity galleries belong in this repository.
+
+## Product feature documentation
+
+`site/features.json` holds the curated bilingual catalogue. `features.html` is its static, progressively readable presentation; `features.js` only filters cards and switches language. The full English/Turkish guides are in `docs/FULL-PRODUCT.md` and `docs/FULL-PRODUCT.tr.md`. New catalogue changes must preserve IDs, requirements, evidence labels and matching guide entries. The validator checks these relationships. The page does not call application APIs.

@@ -21,6 +21,7 @@ Film dört gerçek kayıttan düzenlenmiştir. Kaynak görüntüler genellikle 3
 | Bölüm | İçerik |
 |---|---|
 | Ana sayfa | Proje tanıtımı, demo/tam ürün ayrımı ve seçilebilir kayıtlar |
+| Tüm özellikler | Aranabilir, gereksinim ve kanıt etiketli tam ürün kataloğu |
 | Platform | Şirket ilişkisi, deprem ve uçuş gözlemlerinin bağlamı |
 | Biyometri | Altı iş akışı, statik önizlemeler ve araştırma sınırları |
 | Gerçek kayıtlar | Dört kayıtta kategori filtresi, metin araması, görüntü ve video |
@@ -43,6 +44,20 @@ Bu public repoda özel tam ürün kodu, lisans oluşturma araçları, imza anaht
 **[Canlı demo](https://kaandevs-ops.github.io/navrynt-demo-public/)** · [Demo reposu](https://github.com/kaandevs-ops/navrynt-demo-public) · [Demo içindeki tam ürün kayıtları](https://kaandevs-ops.github.io/navrynt-demo-public/#proof)
 
 Demo biyometri sekmeleri ve Model Studio birer önizlemedir; çıkarım veya eğitim çalıştırmaz.
+
+## Tam ürünün tüm özellikleri
+
+**[Aranabilir Türkçe katalog](https://kaandevs-ops.github.io/navrynt-website-public/features.html?lang=tr)** · **[Ayrıntılı Türkçe rehber](docs/FULL-PRODUCT.tr.md)** · [English guide](docs/FULL-PRODUCT.md) · [Yapılandırılmış envanter](site/features.json)
+
+Kaynak incelemesiyle hazırlanan envanter **14 grupta 122 ürün düzeyi özellik girdisi** içerir. Tam uygulamanın 25 ana gezinme ekranını ve ek API/CLI yüzeylerini kapsar. Her girdide işlev, gereksinimler ve o işleme ait kanıt sınırı bulunur. Bu sayılar 122 işlemin çalıştırıldığı veya doğrulandığı anlamına gelmez.
+
+Katalog; vaka/kanıt, toplama, dijital ayak izi, kurumsal araştırma, GEOINT, medya, altı biyometri, Model Studio, analiz, otomasyon, yönetişim ve entegrasyon yüzeylerini anlatır. Dört gerçek tarihsel kayıt, kurgusal demo örneklemeleri ve yayımlanmış çalışma kaydı olmayan kod incelemeleri ayrı etiketlenir.
+
+| Özellik kataloğu | Filtrelenmiş gerçek kayıt |
+|---|---|
+| ![Ürün özellik kataloğu](docs/media/features.png) | ![Kanıt filtresi ve gereksinimler](docs/media/features-evidence.png) |
+
+Türkçe/İngilizce dil seçimi, metin araması, grup/kanıt filtresi ve özellik bağlantıları bulunur. Ayrıntılı rehberlerle sayfa aynı envanterden hazırlanır. Özel kaynak dosyaları, erişim bilgileri, anahtarlar, model veya veri kümeleri bu rehbere eklenmez.
 
 ## Gerçek ürün kayıtları
 
@@ -95,7 +110,7 @@ GitHub Pages iş akışı kontrollerden sonra yalnızca `site/` klasörünü yay
 ## Dosya düzeni
 
 ```text
-site/                       Yayımlanan sekiz sayfa ve statik dosyalar
+site/                       Yayımlanan dokuz sayfa ve statik dosyalar
 site/assets/                Marka, gerçek kayıtlar ve etiketli önizlemeler
 site/config.js              Website ve demo bağlantıları
 docs/                       Kaynak notları ve yayın rehberi
