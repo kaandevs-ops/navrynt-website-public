@@ -1,0 +1,1 @@
+window.NAVRYNT_CONFIG = Object.freeze({projectName:"NAVRYNT",projectWebsiteUrl:"https://kaandevs-ops.github.io/navrynt-website-public/",publicDemoUrl:"https://kaandevs-ops.github.io/navrynt-demo-public/",repositoryUrl:"https://github.com/kaandevs-ops/navrynt-website-public"});
