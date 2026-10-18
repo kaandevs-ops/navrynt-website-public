@@ -61,6 +61,15 @@ manifest_path=ROOT/'docs/ORIGINAL-MEDIA-SHA256.json'
 if manifest_path.exists():
  for name,digest in json.loads(manifest_path.read_text()).items():
   if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:errors.append(f'Changed original medium: {name}')
+if (ROOT/'site').exists():
+ catalogue=json.loads((SITE/'recordings.json').read_text())
+ runtime=json.loads((SITE/'recordings-data.js').read_text().split('=',1)[1].strip().removesuffix(';'))
+ if catalogue!=runtime:errors.append('Recording source and runtime catalogues differ')
+ identifiers=[entry['id'] for entry in catalogue]
+ if len(identifiers)!=len(set(identifiers)):errors.append('Duplicate recording identifier')
+ for entry in catalogue:
+  for name in [entry['video'],entry['poster'],f"assets/recordings/{entry['id']}.vtt"]:
+   if not (SITE/name).is_file():errors.append(f'Missing recording asset: {name}')
 all_media=ROOT/'docs/MEDIA-SHA256.json'
 if all_media.exists():
  for name,digest in json.loads(all_media.read_text()).items():

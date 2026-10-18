@@ -1,0 +1,46 @@
+[
+  {
+    "id": "aircraft",
+    "category": "GEOINT",
+    "title": "Regional aircraft exploration",
+    "description": "From a regional query to a spatial picture.",
+    "source": "ADSB.lol \u00b7 OpenStreetMap",
+    "date": "16 Oct 2026",
+    "scope": "A historical regional position snapshot. Coverage depends on the source; this is not continuous tracking.",
+    "video": "assets/recordings/aircraft.mp4",
+    "poster": "assets/recordings/aircraft.png"
+  },
+  {
+    "id": "earthquakes",
+    "category": "GEOINT",
+    "title": "Earthquakes, in context",
+    "description": "See public event records plotted inside the application.",
+    "source": "USGS \u00b7 OpenStreetMap",
+    "date": "16 Oct 2026",
+    "scope": "The captured run displays at most the first 150 positions. Historical public event data, not a current alert service.",
+    "video": "assets/recordings/earthquakes.mp4",
+    "poster": "assets/recordings/earthquakes.png"
+  },
+  {
+    "id": "companies",
+    "category": "OSINT",
+    "title": "Company relationship review",
+    "description": "Follow a reported LEI relationship to its source.",
+    "source": "GLEIF",
+    "date": "16 Oct 2026",
+    "scope": "Accounting consolidation relationships, not natural-person beneficial ownership or a complete chain of intermediaries.",
+    "video": "assets/recordings/companies.mp4",
+    "poster": "assets/recordings/companies.png"
+  },
+  {
+    "id": "voice",
+    "category": "Biometrics",
+    "title": "Voice enrollment & comparison",
+    "description": "A recorded enrollment and verification interaction.",
+    "source": "LibriSpeech \u00b7 CC BY 4.0",
+    "date": "16 Oct 2026",
+    "scope": "Research speech examples. A successful comparison does not establish performance across languages, devices, noise or replay attacks.",
+    "video": "assets/recordings/voice.mp4",
+    "poster": "assets/recordings/voice.png"
+  }
+]
