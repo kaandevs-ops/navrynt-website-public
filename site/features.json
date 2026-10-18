@@ -1,0 +1,3051 @@
+{
+  "version": 1,
+  "reviewDate": "2026-10-18",
+  "scope": {
+    "en": "Product-level inventory from source, UI and API review. Code presence is not execution evidence.",
+    "tr": "Kaynak, arayüz ve API incelemesine dayalı ürün düzeyi envanter. Kodda bulunması çalıştırma kanıtı değildir."
+  },
+  "navigationScreens": 25,
+  "categories": [
+    {
+      "id": "investigation",
+      "title": {
+        "en": "Investigation workspace",
+        "tr": "Soruşturma çalışma alanı"
+      },
+      "intro": {
+        "en": "Keep cases, entities, relationships and analyst context together.",
+        "tr": "Vakaları, varlıkları, ilişkileri ve analist bağlamını birlikte incele."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      }
+    },
+    {
+      "id": "evidence",
+      "title": {
+        "en": "Evidence and reproducibility",
+        "tr": "Kanıt ve yeniden üretilebilirlik"
+      },
+      "intro": {
+        "en": "Carry source context and transformation history with the result.",
+        "tr": "Kaynak bağlamını ve dönüşüm geçmişini sonuçla birlikte koru."
+      },
+      "requirements": {
+        "en": "Evidence storage, authorized input files and the relevant case permissions.",
+        "tr": "Kanıt deposu, kullanma yetkisi olan giriş dosyaları ve ilgili vaka izinleri."
+      }
+    },
+    {
+      "id": "collection",
+      "title": {
+        "en": "Sources and collection pipelines",
+        "tr": "Kaynaklar ve toplama akışları"
+      },
+      "intro": {
+        "en": "Connect governed sources and inspect collection, normalization and job state.",
+        "tr": "Yönetilen kaynakları bağla; toplama, normalizasyon ve iş durumlarını incele."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      }
+    },
+    {
+      "id": "identity",
+      "title": {
+        "en": "Digital footprint and communications",
+        "tr": "Dijital ayak izi ve iletişim"
+      },
+      "intro": {
+        "en": "Collect contextual signals without turning uncertain associations into identity certainty.",
+        "tr": "Belirsiz ilişkileri kesin kimlik sonucu gibi sunmadan bağlamsal sinyalleri incele."
+      },
+      "requirements": {
+        "en": "Authorized inputs, configured adapters and provider access or model dependencies where applicable.",
+        "tr": "Yetkili girişler, yapılandırılmış adaptörler ve gerektiğinde sağlayıcı erişimi veya model bağımlılıkları."
+      }
+    },
+    {
+      "id": "corporate",
+      "title": {
+        "en": "Corporate, vehicle and crypto research",
+        "tr": "Kurumsal, taşıt ve kripto araştırması"
+      },
+      "intro": {
+        "en": "Inspect registries and public records with their actual meaning and coverage.",
+        "tr": "Sicilleri ve açık kayıtları gerçek anlam ve kapsamlarıyla incele."
+      },
+      "requirements": {
+        "en": "Configured registry/provider adapters and any required source access.",
+        "tr": "Yapılandırılmış sicil/sağlayıcı adaptörleri ve gereken kaynak erişimi."
+      }
+    },
+    {
+      "id": "geospatial",
+      "title": {
+        "en": "GEOINT and location context",
+        "tr": "GEOINT ve konum bağlamı"
+      },
+      "intro": {
+        "en": "Work with observations, coordinate systems and model-derived location candidates.",
+        "tr": "Gözlemler, koordinat sistemleri ve model kaynaklı konum adaylarıyla çalış."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      }
+    },
+    {
+      "id": "media",
+      "title": {
+        "en": "Media and forensic review",
+        "tr": "Medya ve adli inceleme"
+      },
+      "intro": {
+        "en": "Separate file properties, model output and analyst conclusions.",
+        "tr": "Dosya özelliklerini, model çıktısını ve analist sonucunu ayır."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      }
+    },
+    {
+      "id": "biometrics",
+      "title": {
+        "en": "Six biometric modalities",
+        "tr": "Altı biyometrik tür"
+      },
+      "intro": {
+        "en": "Inspect modality-specific operations behind isolated inference services.",
+        "tr": "Ayrı çıkarım servislerindeki tür bazlı işlemleri incele."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      }
+    },
+    {
+      "id": "model-studio",
+      "title": {
+        "en": "Model Studio and model operations",
+        "tr": "Model Studio ve model işlemleri"
+      },
+      "intro": {
+        "en": "Prepare, configure and inspect supported model workflows.",
+        "tr": "Desteklenen model akışlarını hazırla, yapılandır ve incele."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      }
+    },
+    {
+      "id": "analysis",
+      "title": {
+        "en": "AI-assisted analysis and review",
+        "tr": "Yapay zekâ destekli analiz ve inceleme"
+      },
+      "intro": {
+        "en": "Treat generated signals as reviewable candidates with source context.",
+        "tr": "Üretilen sinyalleri kaynak bağlamıyla incelenebilir adaylar olarak ele al."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      }
+    },
+    {
+      "id": "automation",
+      "title": {
+        "en": "Monitoring, alerts and reporting",
+        "tr": "İzleme, uyarılar ve raporlama"
+      },
+      "intro": {
+        "en": "Make recurring review and structured output visible to analysts.",
+        "tr": "Tekrarlayan incelemeyi ve yapılandırılmış çıktıları analistlere görünür kıl."
+      },
+      "requirements": {
+        "en": "Configured scheduler/workers, event inputs, case data and supported output dependencies.",
+        "tr": "Yapılandırılmış zamanlayıcı/işçiler, olay girdileri, vaka verileri ve desteklenen çıktı bağımlılıkları."
+      }
+    },
+    {
+      "id": "governance",
+      "title": {
+        "en": "Administration and governance",
+        "tr": "Yönetim ve yönetişim"
+      },
+      "intro": {
+        "en": "Review access, retention and operational state without assuming certification.",
+        "tr": "Sertifikasyon varsaymadan erişim, saklama ve işletim durumunu incele."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      }
+    },
+    {
+      "id": "extensions",
+      "title": {
+        "en": "Extensions, research and integration",
+        "tr": "Eklentiler, araştırma ve entegrasyon"
+      },
+      "intro": {
+        "en": "Inspect supported integration and research-management surfaces.",
+        "tr": "Desteklenen entegrasyon ve araştırma yönetimi yüzeylerini incele."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      }
+    },
+    {
+      "id": "restricted-sources",
+      "title": {
+        "en": "Dark-web source availability",
+        "tr": "Dark web kaynak erişilebilirliği"
+      },
+      "intro": {
+        "en": "Keep source checks separate from access, ownership and content conclusions.",
+        "tr": "Kaynak kontrollerini erişim, sahiplik ve içerik sonuçlarından ayır."
+      },
+      "requirements": {
+        "en": "Permitted source access, appropriate proxy/network routing and configured collectors.",
+        "tr": "İzinli kaynak erişimi, uygun proxy/ağ yönlendirmesi ve yapılandırılmış toplayıcılar."
+      }
+    }
+  ],
+  "features": [
+    {
+      "id": "cases",
+      "category": "investigation",
+      "title": {
+        "en": "Case lifecycle",
+        "tr": "Vaka yaşam döngüsü"
+      },
+      "description": {
+        "en": "Create, list and inspect cases; hold, reopen or close them and set case-level analysis egress policy.",
+        "tr": "Vaka oluştur, listele ve incele; beklet, yeniden aç veya kapat; vaka düzeyinde analiz veri çıkış politikasını belirle."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "The linked demo illustrates this workflow with fictional data; it does not verify the full application backend.",
+        "tr": "Bağlantılı demo bu akışı kurgusal verilerle örnekler; tam uygulamanın backend çalışmasını doğrulamaz."
+      },
+      "evidence": "demo"
+    },
+    {
+      "id": "case-history",
+      "category": "investigation",
+      "title": {
+        "en": "Case history and snapshots",
+        "tr": "Vaka geçmişi ve anlık görüntüler"
+      },
+      "description": {
+        "en": "Record append-only history events and create retrievable investigation snapshots.",
+        "tr": "Eklemeli geçmiş olaylarını kaydet ve yeniden erişilebilir soruşturma anlık görüntüleri oluştur."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "case-collaboration",
+      "category": "investigation",
+      "title": {
+        "en": "Analyst locks and presence",
+        "tr": "Analist kilitleri ve oturum görünürlüğü"
+      },
+      "description": {
+        "en": "Acquire and release case editing locks; inspect presence through configured REST/WebSocket surfaces.",
+        "tr": "Vaka düzenleme kilitlerini al ve bırak; yapılandırılmış REST/WebSocket yüzeyleri üzerinden oturum görünürlüğünü incele."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "Presence and locking interfaces do not establish conflict-free editing or production multi-user load capacity.",
+        "tr": "Oturum ve kilitleme arayüzleri çakışmasız düzenleme veya üretim çok kullanıcılı yük kapasitesini kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "case-backups",
+      "category": "investigation",
+      "title": {
+        "en": "Case backup and restore",
+        "tr": "Vaka yedekleme ve geri yükleme"
+      },
+      "description": {
+        "en": "Create backup sets, inspect their file inventory and restore a selected set.",
+        "tr": "Yedek kümeleri oluştur, dosya envanterini incele ve seçilen kümeyi geri yükle."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "backup-schedules",
+      "category": "investigation",
+      "title": {
+        "en": "Backup schedules",
+        "tr": "Yedekleme zamanlamaları"
+      },
+      "description": {
+        "en": "Create, inspect and cancel periodic or durable case backup schedules.",
+        "tr": "Periyodik veya kalıcı vaka yedekleme zamanlamaları oluştur, incele ve iptal et."
+      },
+      "requirements": {
+        "en": "Configured backup storage plus a running scheduler/worker where required.",
+        "tr": "Yapılandırılmış yedek deposu ve gereken durumlarda çalışan zamanlayıcı/işçi."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "entities",
+      "category": "investigation",
+      "title": {
+        "en": "Entity resolution and review",
+        "tr": "Varlık çözümleme ve inceleme"
+      },
+      "description": {
+        "en": "Normalize identifiers, generate resolution candidates and review resolved entity records.",
+        "tr": "Tanımlayıcıları normalize et, çözümleme adayları üret ve çözümlenmiş varlık kayıtlarını incele."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "A resolution candidate or shared identifier is not proof that two records are the same person.",
+        "tr": "Çözümleme adayı veya ortak tanımlayıcı, iki kaydın aynı kişiye ait olduğunu kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "graph",
+      "category": "investigation",
+      "title": {
+        "en": "Knowledge and provenance graphs",
+        "tr": "Bilgi ve kaynak grafikleri"
+      },
+      "description": {
+        "en": "Review linked entities and sources, derive graph views and visualize investigation relationships.",
+        "tr": "Bağlı varlık ve kaynakları incele, grafik görünümleri türet ve soruşturma ilişkilerini görselleştir."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "The linked demo illustrates this workflow with fictional data; it does not verify the full application backend.",
+        "tr": "Bağlantılı demo bu akışı kurgusal verilerle örnekler; tam uygulamanın backend çalışmasını doğrulamaz."
+      },
+      "evidence": "demo"
+    },
+    {
+      "id": "timeline",
+      "category": "investigation",
+      "title": {
+        "en": "Timeline and investigation map",
+        "tr": "Zaman çizelgesi ve soruşturma haritası"
+      },
+      "description": {
+        "en": "Organize temporal events and map case-linked observations.",
+        "tr": "Zamansal olayları düzenle ve vakaya bağlı gözlemleri haritada incele."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "search",
+      "category": "investigation",
+      "title": {
+        "en": "Search and retrieval index",
+        "tr": "Arama ve erişim indeksi"
+      },
+      "description": {
+        "en": "Search stored investigation content and manage the configured retrieval index.",
+        "tr": "Saklanan soruşturma içeriğinde ara ve yapılandırılmış erişim indeksini yönet."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "notes-tags-bookmarks",
+      "category": "investigation",
+      "title": {
+        "en": "Notes, tags and saved queries",
+        "tr": "Notlar, etiketler ve kayıtlı sorgular"
+      },
+      "description": {
+        "en": "Maintain analyst notes, bookmarks, tags and reusable query definitions.",
+        "tr": "Analist notlarını, yer imlerini, etiketleri ve yeniden kullanılabilir sorgu tanımlarını yönet."
+      },
+      "requirements": {
+        "en": "Configured backend, case storage and the appropriate workspace permissions.",
+        "tr": "Yapılandırılmış backend, vaka deposu ve uygun çalışma alanı izinleri."
+      },
+      "limit": {
+        "en": "The linked demo illustrates this workflow with fictional data; it does not verify the full application backend.",
+        "tr": "Bağlantılı demo bu akışı kurgusal verilerle örnekler; tam uygulamanın backend çalışmasını doğrulamaz."
+      },
+      "evidence": "demo"
+    },
+    {
+      "id": "evidence-records",
+      "category": "evidence",
+      "title": {
+        "en": "Evidence intake and original records",
+        "tr": "Kanıt alımı ve özgün kayıtlar"
+      },
+      "description": {
+        "en": "Store and inspect evidence records, raw collected material and source context.",
+        "tr": "Kanıt kayıtlarını, toplanan ham malzemeyi ve kaynak bağlamını sakla ve incele."
+      },
+      "requirements": {
+        "en": "Evidence storage, authorized input files and the relevant case permissions.",
+        "tr": "Kanıt deposu, kullanma yetkisi olan giriş dosyaları ve ilgili vaka izinleri."
+      },
+      "limit": {
+        "en": "The linked demo illustrates this workflow with fictional data; it does not verify the full application backend.",
+        "tr": "Bağlantılı demo bu akışı kurgusal verilerle örnekler; tam uygulamanın backend çalışmasını doğrulamaz."
+      },
+      "evidence": "demo"
+    },
+    {
+      "id": "evidence-integrity",
+      "category": "evidence",
+      "title": {
+        "en": "Integrity and evidence lifecycle",
+        "tr": "Bütünlük ve kanıt yaşam döngüsü"
+      },
+      "description": {
+        "en": "Scan evidence integrity and archive expired evidence according to configured policy.",
+        "tr": "Kanıt bütünlüğünü tara ve süresi dolan kanıtı yapılandırılmış politikaya göre arşivle."
+      },
+      "requirements": {
+        "en": "Evidence storage, authorized input files and the relevant case permissions.",
+        "tr": "Kanıt deposu, kullanma yetkisi olan giriş dosyaları ve ilgili vaka izinleri."
+      },
+      "limit": {
+        "en": "A byte hash does not prove source authenticity. The public demo separately demonstrates actual local SHA-256.",
+        "tr": "Bayt hash değeri kaynak gerçekliğini kanıtlamaz. Public demo ayrıca gerçek yerel SHA-256 hesabını gösterir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "transformation-history",
+      "category": "evidence",
+      "title": {
+        "en": "Transformation history",
+        "tr": "Dönüşüm geçmişi"
+      },
+      "description": {
+        "en": "Record normalization and other transformation steps for traceable processing.",
+        "tr": "İzlenebilir işleme için normalizasyon ve diğer dönüşüm adımlarını kaydet."
+      },
+      "requirements": {
+        "en": "Evidence storage, authorized input files and the relevant case permissions.",
+        "tr": "Kanıt deposu, kullanma yetkisi olan giriş dosyaları ve ilgili vaka izinleri."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "investigation-export",
+      "category": "evidence",
+      "title": {
+        "en": "Investigation package export",
+        "tr": "Soruşturma paketi dışa aktarımı"
+      },
+      "description": {
+        "en": "Build a structured investigation package with supporting evidence and context.",
+        "tr": "Destekleyen kanıt ve bağlamla yapılandırılmış soruşturma paketi oluştur."
+      },
+      "requirements": {
+        "en": "Evidence storage, authorized input files and the relevant case permissions.",
+        "tr": "Kanıt deposu, kullanma yetkisi olan giriş dosyaları ve ilgili vaka izinleri."
+      },
+      "limit": {
+        "en": "The demo brief is an illustrative JSON export, not a full-product investigation-package acceptance test.",
+        "tr": "Demo özeti örnek bir JSON dışa aktarımıdır; tam ürün soruşturma paketinin kabul testi değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "timestamp",
+      "category": "evidence",
+      "title": {
+        "en": "Trusted timestamp integration",
+        "tr": "Güvenilir zaman damgası entegrasyonu"
+      },
+      "description": {
+        "en": "Use a configured timestamp authority for evidence timestamp workflows.",
+        "tr": "Kanıt zaman damgası akışlarında yapılandırılmış zaman damgası otoritesini kullan."
+      },
+      "requirements": {
+        "en": "An appropriate timestamp-authority adapter and external service/network access.",
+        "tr": "Uygun zaman damgası otoritesi adaptörü ve dış servis/ağ erişimi."
+      },
+      "limit": {
+        "en": "Timestamping depends on the chosen authority and trust configuration; it is not a blanket legal admissibility claim.",
+        "tr": "Zaman damgası seçilen otorite ve güven yapılandırmasına bağlıdır; genel hukuki kabul edilebilirlik iddiası değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "sources",
+      "category": "collection",
+      "title": {
+        "en": "Source registry and health",
+        "tr": "Kaynak kaydı ve sağlık görünümü"
+      },
+      "description": {
+        "en": "Register sources, enable or disable them and inspect health history, dashboards and scorecards.",
+        "tr": "Kaynak kaydet, etkinleştir veya kapat; sağlık geçmişini, panoları ve puan kartlarını incele."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "collections",
+      "category": "collection",
+      "title": {
+        "en": "Collection runs and history",
+        "tr": "Toplama çalışmaları ve geçmiş"
+      },
+      "description": {
+        "en": "Run a configured collector and inspect its job status and evidence outputs.",
+        "tr": "Yapılandırılmış toplayıcıyı çalıştır; iş durumunu ve kanıt çıktılarını incele."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "collection-schedules",
+      "category": "collection",
+      "title": {
+        "en": "Scheduled and incremental collection",
+        "tr": "Zamanlanmış ve artımlı toplama"
+      },
+      "description": {
+        "en": "Maintain periodic collection schedules and configured incremental processing.",
+        "tr": "Periyodik toplama zamanlamalarını ve yapılandırılmış artımlı işlemeyi yönet."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "pipeline",
+      "category": "collection",
+      "title": {
+        "en": "Pipeline orchestration and trace",
+        "tr": "İş akışı düzenleme ve izleme"
+      },
+      "description": {
+        "en": "Coordinate collection, normalization, resolution, correlation and knowledge-graph stages with run traces.",
+        "tr": "Toplama, normalizasyon, çözümleme, korelasyon ve bilgi grafiği aşamalarını çalışma izleriyle düzenle."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "ingestion",
+      "category": "collection",
+      "title": {
+        "en": "Ingestion buffer and quarantine",
+        "tr": "Alım tamponu ve karantina"
+      },
+      "description": {
+        "en": "Inspect ingestion status and quarantined records before downstream processing.",
+        "tr": "Sonraki işleme geçmeden alım durumunu ve karantinaya alınmış kayıtları incele."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "normalization",
+      "category": "collection",
+      "title": {
+        "en": "Record normalization and migration",
+        "tr": "Kayıt normalizasyonu ve geçişi"
+      },
+      "description": {
+        "en": "Normalize records, retrieve evidence-linked versions and apply supported migrations.",
+        "tr": "Kayıtları normalize et, kanıta bağlı sürümleri getir ve desteklenen geçişleri uygula."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "web-crawl",
+      "category": "collection",
+      "title": {
+        "en": "Web crawling",
+        "tr": "Web tarama"
+      },
+      "description": {
+        "en": "Run configured web collection under the selected source and access policies.",
+        "tr": "Seçilen kaynak ve erişim politikaları altında yapılandırılmış web toplamayı çalıştır."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "site-drift",
+      "category": "collection",
+      "title": {
+        "en": "Site-structure drift",
+        "tr": "Site yapısı değişimi"
+      },
+      "description": {
+        "en": "Compare observed site structures and preserve observations for collector maintenance.",
+        "tr": "Toplayıcı bakımında gözlenen site yapılarını karşılaştır ve gözlemleri koru."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "jobs",
+      "category": "collection",
+      "title": {
+        "en": "Durable job status and cancellation",
+        "tr": "Kalıcı iş durumu ve iptal"
+      },
+      "description": {
+        "en": "Inspect supported background job state and request cancellation.",
+        "tr": "Desteklenen arka plan iş durumunu incele ve iptal iste."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "domain-discovery",
+      "category": "collection",
+      "title": {
+        "en": "Domain and infrastructure discovery",
+        "tr": "Alan adı ve altyapı keşfi"
+      },
+      "description": {
+        "en": "Use configured DNS, RDAP, certificate-transparency and subdomain-discovery components.",
+        "tr": "Yapılandırılmış DNS, RDAP, sertifika şeffaflığı ve alt alan adı keşfi bileşenlerini kullan."
+      },
+      "requirements": {
+        "en": "Configured collectors, permitted target access, network availability and scheduled workers when needed.",
+        "tr": "Yapılandırılmış toplayıcılar, izinli hedef erişimi, ağ kullanılabilirliği ve gereken zamanlanmış işçiler."
+      },
+      "limit": {
+        "en": "Coverage and freshness depend on the source; discovery is not a complete inventory guarantee.",
+        "tr": "Kapsam ve güncellik kaynağa bağlıdır; keşif tam envanter garantisi değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "password-exposure",
+      "category": "identity",
+      "title": {
+        "en": "Password exposure check",
+        "tr": "Parola sızıntı kontrolü"
+      },
+      "description": {
+        "en": "Perform a hash-prefix exposure query and manage stored check records.",
+        "tr": "Hash önekiyle sızıntı sorgusu yap ve saklanan kontrol kayıtlarını yönet."
+      },
+      "requirements": {
+        "en": "Authorized inputs, configured adapters and provider access or model dependencies where applicable.",
+        "tr": "Yetkili girişler, yapılandırılmış adaptörler ve gerektiğinde sağlayıcı erişimi veya model bağımlılıkları."
+      },
+      "limit": {
+        "en": "Hash-prefix lookup differs from the separately configured HIBP email breach service; no public demo performs these checks.",
+        "tr": "Hash öneki sorgusu ayrı yapılandırılan HIBP e-posta ihlal hizmetinden farklıdır; public demo bu kontrolleri yapmaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "email-breach",
+      "category": "identity",
+      "title": {
+        "en": "Email breach lookup",
+        "tr": "E-posta ihlal sorgusu"
+      },
+      "description": {
+        "en": "Query supported breach information through the configured HIBP integration.",
+        "tr": "Yapılandırılmış HIBP entegrasyonu üzerinden desteklenen ihlal bilgisini sorgula."
+      },
+      "requirements": {
+        "en": "Suitable HIBP account/credential, enabled adapter and permitted use.",
+        "tr": "Uygun HIBP hesabı/erişim bilgisi, etkin adaptör ve izinli kullanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "account-existence",
+      "category": "identity",
+      "title": {
+        "en": "Account-existence signals",
+        "tr": "Hesap varlığı sinyalleri"
+      },
+      "description": {
+        "en": "Request account-existence signals from a configured provider.",
+        "tr": "Yapılandırılmış sağlayıcıdan hesap varlığı sinyalleri iste."
+      },
+      "requirements": {
+        "en": "Authorized inputs, configured adapters and provider access or model dependencies where applicable.",
+        "tr": "Yetkili girişler, yapılandırılmış adaptörler ve gerektiğinde sağlayıcı erişimi veya model bağımlılıkları."
+      },
+      "limit": {
+        "en": "A provider signal is not proof of account ownership or complete service coverage.",
+        "tr": "Sağlayıcı sinyali hesap sahipliğini veya tam servis kapsamını kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "username-search",
+      "category": "identity",
+      "title": {
+        "en": "Username enumeration",
+        "tr": "Kullanıcı adı araması"
+      },
+      "description": {
+        "en": "Run supported username checks against configured site definitions and review results.",
+        "tr": "Yapılandırılmış site tanımları üzerinde desteklenen kullanıcı adı kontrollerini yap ve sonuçları incele."
+      },
+      "requirements": {
+        "en": "Authorized inputs, configured adapters and provider access or model dependencies where applicable.",
+        "tr": "Yetkili girişler, yapılandırılmış adaptörler ve gerektiğinde sağlayıcı erişimi veya model bağımlılıkları."
+      },
+      "limit": {
+        "en": "Matching names do not prove common ownership; site changes and rate limits affect results.",
+        "tr": "Eşleşen adlar ortak sahipliği kanıtlamaz; site değişiklikleri ve hız sınırları sonuçları etkiler."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "email-patterns",
+      "category": "identity",
+      "title": {
+        "en": "Email patterns and local-part inference",
+        "tr": "E-posta desenleri ve yerel kısım çıkarımı"
+      },
+      "description": {
+        "en": "Generate local-part hints and supported organizational email-pattern candidates.",
+        "tr": "Yerel kısım ipuçları ve desteklenen kurumsal e-posta deseni adayları üret."
+      },
+      "requirements": {
+        "en": "Authorized inputs, configured adapters and provider access or model dependencies where applicable.",
+        "tr": "Yetkili girişler, yapılandırılmış adaptörler ve gerektiğinde sağlayıcı erişimi veya model bağımlılıkları."
+      },
+      "limit": {
+        "en": "Inferred patterns and name/year hints are candidates, not verified identities or deliverable addresses.",
+        "tr": "Çıkarılan desenler ve ad/yıl ipuçları adaydır; doğrulanmış kimlik veya teslim edilebilir adres değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "phone",
+      "category": "identity",
+      "title": {
+        "en": "Phone-number analysis",
+        "tr": "Telefon numarası analizi"
+      },
+      "description": {
+        "en": "Parse and analyze supplied numbers; optionally query configured carrier/location metadata and store results.",
+        "tr": "Verilen numaraları ayrıştır ve analiz et; isteğe bağlı operatör/konum metadatasını sorgula ve sonuçları sakla."
+      },
+      "requirements": {
+        "en": "Authorized inputs, configured adapters and provider access or model dependencies where applicable.",
+        "tr": "Yetkili girişler, yapılandırılmış adaptörler ve gerektiğinde sağlayıcı erişimi veya model bağımlılıkları."
+      },
+      "limit": {
+        "en": "Number metadata and numbering-area hints are not live handset GPS location.",
+        "tr": "Numara metadatası ve numaralandırma bölgesi ipuçları telefonun canlı GPS konumu değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "ioc",
+      "category": "identity",
+      "title": {
+        "en": "IOC enrichment",
+        "tr": "IOC zenginleştirme"
+      },
+      "description": {
+        "en": "Enrich supplied indicators with the configured threat-intelligence provider.",
+        "tr": "Verilen göstergeleri yapılandırılmış tehdit istihbaratı sağlayıcısıyla zenginleştir."
+      },
+      "requirements": {
+        "en": "Configured threat-intelligence adapter; credentials and quotas depend on the selected provider.",
+        "tr": "Yapılandırılmış tehdit istihbaratı adaptörü; erişim bilgileri ve kotalar sağlayıcıya bağlıdır."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "passive-dns",
+      "category": "identity",
+      "title": {
+        "en": "Passive DNS",
+        "tr": "Pasif DNS"
+      },
+      "description": {
+        "en": "Query available historical DNS associations through a configured source.",
+        "tr": "Yapılandırılmış kaynak üzerinden mevcut tarihsel DNS ilişkilerini sorgula."
+      },
+      "requirements": {
+        "en": "Authorized inputs, configured adapters and provider access or model dependencies where applicable.",
+        "tr": "Yetkili girişler, yapılandırılmış adaptörler ve gerektiğinde sağlayıcı erişimi veya model bağımlılıkları."
+      },
+      "limit": {
+        "en": "Historical associations can be incomplete or stale and do not prove present infrastructure ownership.",
+        "tr": "Tarihsel ilişkiler eksik veya eski olabilir; mevcut altyapı sahipliğini kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "documents",
+      "category": "identity",
+      "title": {
+        "en": "Document extraction",
+        "tr": "Belge çıkarımı"
+      },
+      "description": {
+        "en": "Extract supported document content and metadata for investigation processing.",
+        "tr": "Soruşturma işlemesinde desteklenen belge içeriğini ve metadatasını çıkar."
+      },
+      "requirements": {
+        "en": "Supported input formats and the relevant parsers/OCR dependencies.",
+        "tr": "Desteklenen giriş biçimleri ve ilgili ayrıştırıcı/OCR bağımlılıkları."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "company-registry",
+      "category": "corporate",
+      "title": {
+        "en": "Reported company relationships",
+        "tr": "Bildirilen şirket ilişkileri"
+      },
+      "description": {
+        "en": "Query supported company registry data and reported parent relationships.",
+        "tr": "Desteklenen şirket sicili verilerini ve bildirilen üst şirket ilişkilerini sorgula."
+      },
+      "requirements": {
+        "en": "Configured registry/provider adapters and any required source access.",
+        "tr": "Yapılandırılmış sicil/sağlayıcı adaptörleri ve gereken kaynak erişimi."
+      },
+      "limit": {
+        "en": "The published GLEIF run shows accounting parentage, not natural-person beneficial ownership or every intermediary.",
+        "tr": "Yayımlanan GLEIF kaydı muhasebesel üst şirket ilişkisini gösterir; gerçek kişi faydalanıcı sahipliğini veya her aracıyı göstermez."
+      },
+      "evidence": "recorded",
+      "recording": "companies"
+    },
+    {
+      "id": "sanctions",
+      "category": "corporate",
+      "title": {
+        "en": "Sanctions and PEP screening",
+        "tr": "Yaptırım ve PEP taraması"
+      },
+      "description": {
+        "en": "Screen supplied subjects through the configured sanctions/PEP source.",
+        "tr": "Verilen özneleri yapılandırılmış yaptırım/PEP kaynağında tara."
+      },
+      "requirements": {
+        "en": "Configured registry/provider adapters and any required source access.",
+        "tr": "Yapılandırılmış sicil/sağlayıcı adaptörleri ve gereken kaynak erişimi."
+      },
+      "limit": {
+        "en": "Matches require human review and source checks; they are not a legal finding.",
+        "tr": "Eşleşmeler insan incelemesi ve kaynak kontrolü gerektirir; hukuki bulgu değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "ubo",
+      "category": "corporate",
+      "title": {
+        "en": "Beneficial-ownership chain lookup",
+        "tr": "Faydalanıcı sahiplik zinciri sorgusu"
+      },
+      "description": {
+        "en": "Use configured ownership sources to request supported UBO chain information.",
+        "tr": "Desteklenen UBO zincir bilgisi için yapılandırılmış sahiplik kaynaklarını kullan."
+      },
+      "requirements": {
+        "en": "Configured registry/provider adapters and any required source access.",
+        "tr": "Yapılandırılmış sicil/sağlayıcı adaptörleri ve gereken kaynak erişimi."
+      },
+      "limit": {
+        "en": "Coverage depends on the ownership source; GLEIF accounting consolidation is not equivalent to a full UBO chain.",
+        "tr": "Kapsam sahiplik kaynağına bağlıdır; GLEIF muhasebesel konsolidasyon ilişkisi tam UBO zinciriyle eşdeğer değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "vehicle",
+      "category": "corporate",
+      "title": {
+        "en": "Vehicle registry lookup",
+        "tr": "Taşıt sicili sorgusu"
+      },
+      "description": {
+        "en": "Look up supported plate/VIN registry fields using the configured adapter.",
+        "tr": "Yapılandırılmış adaptörle desteklenen plaka/VIN sicil alanlarını sorgula."
+      },
+      "requirements": {
+        "en": "Configured registry/provider adapters and any required source access.",
+        "tr": "Yapılandırılmış sicil/sağlayıcı adaptörleri ve gereken kaynak erişimi."
+      },
+      "limit": {
+        "en": "Available fields and countries depend on the registry; owner identity and vehicle location are not implied.",
+        "tr": "Alanlar ve ülkeler sicile bağlıdır; sahip kimliği veya araç konumu ima edilmez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "crypto-wallet",
+      "category": "corporate",
+      "title": {
+        "en": "Read-only crypto wallet activity",
+        "tr": "Salt okunur kripto cüzdan etkinliği"
+      },
+      "description": {
+        "en": "Query supported wallet balance and transaction records through a configured source.",
+        "tr": "Yapılandırılmış kaynakla desteklenen cüzdan bakiye ve işlem kayıtlarını sorgula."
+      },
+      "requirements": {
+        "en": "Configured registry/provider adapters and any required source access.",
+        "tr": "Yapılandırılmış sicil/sağlayıcı adaptörleri ve gereken kaynak erişimi."
+      },
+      "limit": {
+        "en": "Read-only public records do not identify a wallet owner; no payment or wallet-control flow is shown.",
+        "tr": "Salt okunur açık kayıtlar cüzdan sahibini belirlemez; ödeme veya cüzdan kontrol akışı gösterilmez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "aircraft",
+      "category": "geospatial",
+      "title": {
+        "en": "Regional aircraft observations",
+        "tr": "Bölgesel uçuş gözlemleri"
+      },
+      "description": {
+        "en": "Query supported ADSB.lol aircraft states and plot returned coordinates.",
+        "tr": "Desteklenen ADSB.lol uçuş durumlarını sorgula ve dönen koordinatları haritada göster."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      },
+      "limit": {
+        "en": "One historical regional snapshot is published; it is not continuous tracking or a complete aircraft inventory.",
+        "tr": "Tek tarihsel bölgesel anlık görüntü yayımlanmıştır; sürekli takip veya tam uçuş envanteri değildir."
+      },
+      "evidence": "recorded",
+      "recording": "aircraft"
+    },
+    {
+      "id": "earthquakes",
+      "category": "geospatial",
+      "title": {
+        "en": "Public earthquake event map",
+        "tr": "Açık deprem olay haritası"
+      },
+      "description": {
+        "en": "Collect supported USGS event records and review mapped observations.",
+        "tr": "Desteklenen USGS olay kayıtlarını topla ve haritalanan gözlemleri incele."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      },
+      "limit": {
+        "en": "The captured run shows at most the first 150 positions. Historical event data is not prediction or early warning.",
+        "tr": "Kayıt en fazla ilk 150 konumu gösterir. Tarihsel olay verisi tahmin veya erken uyarı değildir."
+      },
+      "evidence": "recorded",
+      "recording": "earthquakes"
+    },
+    {
+      "id": "weather",
+      "category": "geospatial",
+      "title": {
+        "en": "Weather model lookup",
+        "tr": "Hava modeli sorgusu"
+      },
+      "description": {
+        "en": "Request supported Open-Meteo data for supplied coordinates and inspect the returned grid point.",
+        "tr": "Verilen koordinat için desteklenen Open-Meteo verisini iste ve dönen model ızgara noktasını incele."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      },
+      "limit": {
+        "en": "A weather model grid is not an on-site sensor reading; public use remains subject to source terms.",
+        "tr": "Hava modeli ızgarası yerinde sensör ölçümü değildir; açık kullanım kaynak koşullarına bağlıdır."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "opensky",
+      "category": "geospatial",
+      "title": {
+        "en": "OpenSky flight-state integration",
+        "tr": "OpenSky uçuş durumu entegrasyonu"
+      },
+      "description": {
+        "en": "Use the configured OpenSky source for supported flight-state queries.",
+        "tr": "Desteklenen uçuş durumu sorguları için yapılandırılmış OpenSky kaynağını kullan."
+      },
+      "requirements": {
+        "en": "Suitable OpenSky access/credentials, configured adapter and available source quota.",
+        "tr": "Uygun OpenSky erişimi/bilgileri, yapılandırılmış adaptör ve kullanılabilir kaynak kotası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "ais",
+      "category": "geospatial",
+      "title": {
+        "en": "AIS vessel traffic integration",
+        "tr": "AIS gemi trafiği entegrasyonu"
+      },
+      "description": {
+        "en": "Request supported vessel positions from the configured AIS source.",
+        "tr": "Yapılandırılmış AIS kaynağından desteklenen gemi konumlarını iste."
+      },
+      "requirements": {
+        "en": "AIS provider access, configured adapter and permitted data use.",
+        "tr": "AIS sağlayıcı erişimi, yapılandırılmış adaptör ve izinli veri kullanımı."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "events",
+      "category": "geospatial",
+      "title": {
+        "en": "GDELT event stream",
+        "tr": "GDELT olay akışı"
+      },
+      "description": {
+        "en": "Collect supported event records for research and spatial context.",
+        "tr": "Araştırma ve konumsal bağlam için desteklenen olay kayıtlarını topla."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      },
+      "limit": {
+        "en": "Reported events are source records, not independent verification of the underlying event.",
+        "tr": "Bildirilen olaylar kaynak kayıtlarıdır; olayın bağımsız doğrulaması değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "satellite",
+      "category": "geospatial",
+      "title": {
+        "en": "Satellite orbit propagation",
+        "tr": "Uydu yörünge hesabı"
+      },
+      "description": {
+        "en": "Propagate positions from supported TLE data with the configured SGP4 pipeline.",
+        "tr": "Desteklenen TLE verisinden yapılandırılmış SGP4 akışıyla konum hesapla."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      },
+      "limit": {
+        "en": "Computed orbit positions are not live GPS telemetry or satellite imagery.",
+        "tr": "Hesaplanan yörünge konumları canlı GPS telemetrisi veya uydu görüntüsü değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "coordinates",
+      "category": "geospatial",
+      "title": {
+        "en": "Coordinate transformations",
+        "tr": "Koordinat dönüşümleri"
+      },
+      "description": {
+        "en": "Transform WGS84, UTM and ECEF inputs through supported coordinate operations.",
+        "tr": "Desteklenen işlemlerle WGS84, UTM ve ECEF girişlerini dönüştür."
+      },
+      "requirements": {
+        "en": "Valid coordinates, the correct source coordinate reference system and geospatial libraries.",
+        "tr": "Geçerli koordinatlar, doğru kaynak referans sistemi ve konumsal kütüphaneler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "geo-db",
+      "category": "geospatial",
+      "title": {
+        "en": "Vector and geographic database",
+        "tr": "Vektör ve konumsal veritabanı"
+      },
+      "description": {
+        "en": "Inspect supported vectors, import layers and query bounding boxes in the geographic store.",
+        "tr": "Desteklenen vektörleri incele, katmanları içe aktar ve konumsal depoda sınırlayıcı kutu sorgula."
+      },
+      "requirements": {
+        "en": "Supported geographic files, database paths and import/query permissions.",
+        "tr": "Desteklenen konumsal dosyalar, veritabanı konumları ve içe aktarma/sorgu izinleri."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "geo-anomalies",
+      "category": "geospatial",
+      "title": {
+        "en": "Track anomaly indicators",
+        "tr": "Hareket izi anomali göstergeleri"
+      },
+      "description": {
+        "en": "Flag configured position jumps and reporting gaps in supplied observations.",
+        "tr": "Verilen gözlemlerde yapılandırılmış konum sıçramalarını ve raporlama boşluklarını işaretle."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      },
+      "limit": {
+        "en": "Threshold-based indicators are review leads, not proof of unlawful behavior or sensor truth.",
+        "tr": "Eşik tabanlı göstergeler inceleme ipucudur; hukuka aykırı davranış veya sensör gerçekliği kanıtı değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "geo-correlation",
+      "category": "geospatial",
+      "title": {
+        "en": "Spatial and temporal candidate correlation",
+        "tr": "Konumsal ve zamansal aday korelasyonu"
+      },
+      "description": {
+        "en": "Compare supplied observations using distance/time windows and event-location constraints.",
+        "tr": "Verilen gözlemleri uzaklık/zaman pencereleri ve olay-konum kısıtlarıyla karşılaştır."
+      },
+      "requirements": {
+        "en": "Configured source adapters, permitted network access and geospatial dependencies as applicable.",
+        "tr": "Yapılandırılmış kaynak adaptörleri, izinli ağ erişimi ve ilgili konumsal bağımlılıklar."
+      },
+      "limit": {
+        "en": "Spatial coincidence generates candidates, not certain identity or causation.",
+        "tr": "Konumsal çakışma aday üretir; kesin kimlik veya nedensellik oluşturmaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "image-location",
+      "category": "geospatial",
+      "title": {
+        "en": "Visual geolocation candidates",
+        "tr": "Görsel konum adayları"
+      },
+      "description": {
+        "en": "Use a configured visual model/matching adapter to rank image-location candidates.",
+        "tr": "Görsel konum adaylarını sıralamak için yapılandırılmış görsel model/eşleştirme adaptörünü kullan."
+      },
+      "requirements": {
+        "en": "Compatible visual model weights, reference data, matching adapter and runtime capacity.",
+        "tr": "Uyumlu görsel model ağırlıkları, referans veri, eşleştirme adaptörü ve çalışma kapasitesi."
+      },
+      "limit": {
+        "en": "Candidate ranking is not exact location proof; source code or a healthy service is not an accuracy benchmark.",
+        "tr": "Aday sıralaması kesin konum kanıtı değildir; kaynak kodu veya sağlıklı servis doğruluk ölçümü değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "image-metadata",
+      "category": "media",
+      "title": {
+        "en": "Image metadata and perceptual hashes",
+        "tr": "Görsel metadata ve algısal hash"
+      },
+      "description": {
+        "en": "Inspect supported image metadata and compute similarity-oriented file descriptors.",
+        "tr": "Desteklenen görsel metadatasını incele ve benzerlik amaçlı dosya tanımlayıcıları hesapla."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "Metadata can be edited and perceptual similarity is not an authenticity determination.",
+        "tr": "Metadata değiştirilebilir; algısal benzerlik gerçeklik kararı değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "deepfake",
+      "category": "media",
+      "title": {
+        "en": "Deepfake model assessment",
+        "tr": "Deepfake model değerlendirmesi"
+      },
+      "description": {
+        "en": "Run the configured detection model on supported inputs and review its output.",
+        "tr": "Desteklenen girişte yapılandırılmış tespit modelini çalıştır ve çıktısını incele."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "A model score is not a definitive real/fake verdict; model assets and independent validation are required.",
+        "tr": "Model skoru kesin gerçek/sahte kararı değildir; model varlıkları ve bağımsız değerlendirme gerekir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "audio",
+      "category": "media",
+      "title": {
+        "en": "Audio metadata and transcription",
+        "tr": "Ses metadatası ve transkripsiyon"
+      },
+      "description": {
+        "en": "Analyze supported audio properties and obtain a transcript from a configured speech runtime.",
+        "tr": "Desteklenen ses özelliklerini analiz et ve yapılandırılmış konuşma motorundan transkript al."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "Transcripts can misrecognize proper names and noisy speech; review against the recording.",
+        "tr": "Transkriptler özel adları ve gürültülü konuşmayı yanlış tanıyabilir; kayıtla karşılaştırılmalıdır."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "video",
+      "category": "media",
+      "title": {
+        "en": "Video metadata and keyframes",
+        "tr": "Video metadatası ve anahtar kareler"
+      },
+      "description": {
+        "en": "Inspect supported video metadata and extract or review keyframes.",
+        "tr": "Desteklenen video metadatasını incele ve anahtar kareleri çıkar veya gözden geçir."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "ela",
+      "category": "media",
+      "title": {
+        "en": "Manipulation indicators and ELA",
+        "tr": "Manipülasyon göstergeleri ve ELA"
+      },
+      "description": {
+        "en": "Produce supported error-level/manipulation indicators for analyst inspection.",
+        "tr": "Analist incelemesi için desteklenen hata seviyesi/manipülasyon göstergelerini üret."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "Compression artifacts and indicators do not independently prove manipulation.",
+        "tr": "Sıkıştırma izleri ve göstergeler tek başına manipülasyonu kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "objects",
+      "category": "media",
+      "title": {
+        "en": "Scene and object analysis",
+        "tr": "Sahne ve nesne analizi"
+      },
+      "description": {
+        "en": "Use the configured scene/object adapter on supported imagery.",
+        "tr": "Desteklenen görüntülerde yapılandırılmış sahne/nesne adaptörünü kullan."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "reverse-image",
+      "category": "media",
+      "title": {
+        "en": "Reverse-image integration",
+        "tr": "Ters görsel arama entegrasyonu"
+      },
+      "description": {
+        "en": "Query a configured reverse-image provider and inspect returned candidates.",
+        "tr": "Yapılandırılmış ters görsel sağlayıcısını sorgula ve dönen adayları incele."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "Results depend on provider indexes and are not a guarantee of the first publication source.",
+        "tr": "Sonuçlar sağlayıcı indeksine bağlıdır; ilk yayın kaynağı garantisi değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "source-attribution",
+      "category": "media",
+      "title": {
+        "en": "Source-attribution candidates",
+        "tr": "Kaynak atfı adayları"
+      },
+      "description": {
+        "en": "Compare supported publication evidence to suggest source-attribution candidates.",
+        "tr": "Kaynak atfı adayları önermek için desteklenen yayın kanıtlarını karşılaştır."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "The earliest available observation is not necessarily the original publisher.",
+        "tr": "Erişilebilir en erken gözlem her zaman özgün yayıncı değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "media-timeline",
+      "category": "media",
+      "title": {
+        "en": "Media-to-timeline bridge",
+        "tr": "Medya ve zaman çizelgesi köprüsü"
+      },
+      "description": {
+        "en": "Connect supported media observations with investigation timeline context.",
+        "tr": "Desteklenen medya gözlemlerini soruşturma zaman çizelgesi bağlamıyla ilişkilendir."
+      },
+      "requirements": {
+        "en": "Authorized media input, supported formats and required parsers/models or external providers.",
+        "tr": "Yetkili medya girdisi, desteklenen biçimler ve gereken ayrıştırıcılar/modeller veya dış sağlayıcılar."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "face",
+      "category": "biometrics",
+      "title": {
+        "en": "Face embedding and gallery workflows",
+        "tr": "Yüz vektörü ve galeri akışları"
+      },
+      "description": {
+        "en": "Embed, compare, recognize and manage multi-template enrollment galleries.",
+        "tr": "Vektör çıkar, karşılaştır, tanıma adaylarını incele ve çok şablonlu kayıt galerilerini yönet."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "The public demo is an illustration; population accuracy, thresholds and spoof resistance are not established here.",
+        "tr": "Public demo bir örneklemedir; popülasyon doğruluğu, eşikler ve sahtecilik direnci burada doğrulanmış değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "iris",
+      "category": "biometrics",
+      "title": {
+        "en": "Iris enrollment and identification candidates",
+        "tr": "İris kaydı ve kimlik adayları"
+      },
+      "description": {
+        "en": "Enroll iris samples and request top-k identification candidates from the configured service.",
+        "tr": "İris örneklerini kaydet ve yapılandırılmış servisten ilk-k kimlik adaylarını iste."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "fingerprint",
+      "category": "biometrics",
+      "title": {
+        "en": "Fingerprint minutiae, quality and matching",
+        "tr": "Parmak izi minutiae, kalite ve eşleştirme"
+      },
+      "description": {
+        "en": "Extract features, inspect quality, compare prints and run supported identification/model-loading paths.",
+        "tr": "Özellikleri çıkar, kaliteyi incele, izleri karşılaştır ve desteklenen tanıma/model yükleme yollarını kullan."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "Classical/model modes have distinct prerequisites; a quality heuristic is not NIST NFIQ2 certification.",
+        "tr": "Klasik/model kiplerinin gereksinimleri farklıdır; kalite sezgiseli NIST NFIQ2 sertifikasyonu değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "voice-compare",
+      "category": "biometrics",
+      "title": {
+        "en": "Voice enrollment and comparison",
+        "tr": "Ses kaydı ve karşılaştırma"
+      },
+      "description": {
+        "en": "Enroll research speech examples and review a voice comparison result.",
+        "tr": "Araştırma konuşma örneklerini kaydet ve ses karşılaştırma sonucunu incele."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "The published LibriSpeech example does not establish accuracy across languages, devices, noise or replay attacks.",
+        "tr": "Yayımlanan LibriSpeech örneği diller, cihazlar, gürültü veya tekrar oynatma saldırılarında doğruluğu kanıtlamaz."
+      },
+      "evidence": "recorded",
+      "recording": "voice"
+    },
+    {
+      "id": "voice-gallery",
+      "category": "biometrics",
+      "title": {
+        "en": "Voice galleries and top-k identification",
+        "tr": "Ses galerileri ve ilk-k kimlik adayları"
+      },
+      "description": {
+        "en": "List/delete voice enrollments and use supported top-k speaker identification.",
+        "tr": "Ses kayıtlarını listele/sil ve desteklenen ilk-k konuşmacı kimlik adaylarını kullan."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "The published enrollment/comparison clip does not validate every gallery-management or identification operation.",
+        "tr": "Yayımlanan kayıt/karşılaştırma videosu her galeri yönetimi veya kimlik adayı işlemini doğrulamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "writer",
+      "category": "biometrics",
+      "title": {
+        "en": "Writer-ID embeddings and search",
+        "tr": "Yazar kimliği vektörleri ve arama"
+      },
+      "description": {
+        "en": "Embed handwriting, compare samples and search a configured writer gallery.",
+        "tr": "El yazısı vektörü çıkar, örnekleri karşılaştır ve yapılandırılmış yazar galerisinde ara."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "The workflow describes handwriting comparison, not personality inference or forensic certainty.",
+        "tr": "Akış el yazısı karşılaştırmasını anlatır; kişilik çıkarımı veya adli kesinlik sağlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "gait",
+      "category": "biometrics",
+      "title": {
+        "en": "Gait embedding and comparison",
+        "tr": "Yürüyüş vektörü ve karşılaştırma"
+      },
+      "description": {
+        "en": "Embed supported walking sequences and request pairwise comparison.",
+        "tr": "Desteklenen yürüyüş dizilerinden vektör çıkar ve ikili karşılaştırma iste."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "Sequence format, view and domain affect results; no general identity-accuracy claim is made.",
+        "tr": "Dizi biçimi, bakış açısı ve alan sonuçları etkiler; genel kimlik doğruluğu iddiası yapılmaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "bio-status",
+      "category": "biometrics",
+      "title": {
+        "en": "Service health and gateway state",
+        "tr": "Servis sağlığı ve geçit durumu"
+      },
+      "description": {
+        "en": "Inspect reachability/readiness and route approved operations to isolated services.",
+        "tr": "Erişilebilirlik/hazır durumunu incele ve onaylı işlemleri ayrı servislere yönlendir."
+      },
+      "requirements": {
+        "en": "Authorized samples, an appropriate trained checkpoint/gallery, compatible service runtime and permissions.",
+        "tr": "Yetkili örnekler, uygun eğitilmiş model/galeri, uyumlu servis ortamı ve izinler."
+      },
+      "limit": {
+        "en": "A reachable or registered service is not proof of real recognition accuracy.",
+        "tr": "Erişilebilir veya kayıtlı servis gerçek tanıma doğruluğunu kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-jobs",
+      "category": "model-studio",
+      "title": {
+        "en": "Lifecycle jobs and cancellation",
+        "tr": "Yaşam döngüsü işleri ve iptal"
+      },
+      "description": {
+        "en": "Start supported jobs, inspect status/logs and request cancellation through the gateway.",
+        "tr": "Desteklenen işleri başlat, durum/günlükleri incele ve geçit üzerinden iptal iste."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Catalogue availability does not mean every training, evaluation or export operation was executed successfully.",
+        "tr": "Katalogda bulunması her eğitim, değerlendirme veya dışa aktarımın başarıyla çalıştırıldığı anlamına gelmez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-config",
+      "category": "model-studio",
+      "title": {
+        "en": "Managed configs, datasets and artifacts",
+        "tr": "Yönetilen ayarlar, veri kümeleri ve çıktılar"
+      },
+      "description": {
+        "en": "Inspect approved datasets/artifacts and read or save managed job configurations.",
+        "tr": "Onaylı veri kümelerini/çıktıları incele; yönetilen iş yapılandırmalarını oku veya kaydet."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-face",
+      "category": "model-studio",
+      "title": {
+        "en": "Face lifecycle catalogue",
+        "tr": "Yüz model yaşam döngüsü kataloğu"
+      },
+      "description": {
+        "en": "Supported preparation, scratch/fine-tune, evaluation, gallery-build and ONNX-export entry points.",
+        "tr": "Desteklenen hazırlık, sıfırdan eğitim/ince ayar, değerlendirme, galeri kurma ve ONNX aktarım girişleri."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-iris",
+      "category": "model-studio",
+      "title": {
+        "en": "Iris lifecycle catalogue",
+        "tr": "İris yaşam döngüsü kataloğu"
+      },
+      "description": {
+        "en": "Supported metric training, fine-tuning, evaluation, benchmarking and ONNX-export entry points.",
+        "tr": "Desteklenen metrik eğitim, ince ayar, değerlendirme, ölçüm ve ONNX aktarım girişleri."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-fingerprint",
+      "category": "model-studio",
+      "title": {
+        "en": "Fingerprint lifecycle catalogue",
+        "tr": "Parmak izi yaşam döngüsü kataloğu"
+      },
+      "description": {
+        "en": "Supported training, fine-tuning, quality-tool and model-export entry points.",
+        "tr": "Desteklenen eğitim, ince ayar, kalite aracı ve model aktarım girişleri."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-voice",
+      "category": "model-studio",
+      "title": {
+        "en": "Voice lifecycle catalogue",
+        "tr": "Ses yaşam döngüsü kataloğu"
+      },
+      "description": {
+        "en": "Supported training/fine-tuning, threshold calibration and ONNX-export entry points.",
+        "tr": "Desteklenen eğitim/ince ayar, eşik kalibrasyonu ve ONNX aktarım girişleri."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-writer",
+      "category": "model-studio",
+      "title": {
+        "en": "Writer-ID lifecycle catalogue",
+        "tr": "Yazar kimliği yaşam döngüsü kataloğu"
+      },
+      "description": {
+        "en": "Supported training, fine-tuning, hard-negative mining, evaluation and export entry points.",
+        "tr": "Desteklenen eğitim, ince ayar, zor negatif çıkarımı, değerlendirme ve aktarım girişleri."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "studio-gait",
+      "category": "model-studio",
+      "title": {
+        "en": "Gait lifecycle catalogue",
+        "tr": "Yürüyüş yaşam döngüsü kataloğu"
+      },
+      "description": {
+        "en": "Supported training/fine-tuning, zero-shot, CMC/mAP, cross-view evaluation, visualization and export paths.",
+        "tr": "Desteklenen eğitim/ince ayar, sıfır örnek, CMC/mAP, açılar arası değerlendirme, görselleştirme ve aktarım yolları."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "model-registry",
+      "category": "model-studio",
+      "title": {
+        "en": "Model registry and routing",
+        "tr": "Model kaydı ve yönlendirme"
+      },
+      "description": {
+        "en": "Register models, inspect metadata and choose supported model/provider routes.",
+        "tr": "Model kaydet, metadatayı incele ve desteklenen model/sağlayıcı yollarını seç."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "local-models",
+      "category": "model-studio",
+      "title": {
+        "en": "Local model lifecycle",
+        "tr": "Yerel model yaşam döngüsü"
+      },
+      "description": {
+        "en": "Use supported local model download, server start/stop and health operations.",
+        "tr": "Desteklenen yerel model indirme, sunucu başlatma/durdurma ve sağlık işlemlerini kullan."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "hardware",
+      "category": "model-studio",
+      "title": {
+        "en": "Hardware and deployment profiles",
+        "tr": "Donanım ve dağıtım profilleri"
+      },
+      "description": {
+        "en": "Inspect hardware recommendations/detection and configured deployment profiles.",
+        "tr": "Donanım önerilerini/tespitini ve yapılandırılmış dağıtım profillerini incele."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Recommendations are not a measured production sizing or latency guarantee.",
+        "tr": "Öneriler ölçülmüş üretim boyutlandırması veya gecikme garantisi değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "benchmark",
+      "category": "model-studio",
+      "title": {
+        "en": "Benchmarks and A/B comparison",
+        "tr": "Ölçümler ve A/B karşılaştırması"
+      },
+      "description": {
+        "en": "Run supported model/retrieval benchmarks, store results and compare models on supplied samples.",
+        "tr": "Desteklenen model/erişim ölçümlerini çalıştır, sonuçları sakla ve verilen örneklerde modelleri karşılaştır."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "experiments-data",
+      "category": "model-studio",
+      "title": {
+        "en": "Experiments and dataset catalogue",
+        "tr": "Deneyler ve veri kümesi kataloğu"
+      },
+      "description": {
+        "en": "Manage experiments/metrics and supported dataset registrations/catalogue entries.",
+        "tr": "Deneyleri/metrikleri ve desteklenen veri kümesi kayıtlarını/katalog girdilerini yönet."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "usage-ledger",
+      "category": "model-studio",
+      "title": {
+        "en": "Model usage ledger",
+        "tr": "Model kullanım defteri"
+      },
+      "description": {
+        "en": "Record and inspect supported model usage entries and summaries.",
+        "tr": "Desteklenen model kullanım girdilerini ve özetlerini kaydet ve incele."
+      },
+      "requirements": {
+        "en": "Appropriate model/data licenses, compatible dependencies, service authorization, storage and hardware.",
+        "tr": "Uygun model/veri lisansları, uyumlu bağımlılıklar, servis yetkisi, depolama ve donanım."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "ner",
+      "category": "analysis",
+      "title": {
+        "en": "Named-entity extraction",
+        "tr": "Adlandırılmış varlık çıkarımı"
+      },
+      "description": {
+        "en": "Extract candidate entities from supported text and review evidence-linked results.",
+        "tr": "Desteklenen metinden varlık adayları çıkar ve kanıta bağlı sonuçları incele."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "classification",
+      "category": "analysis",
+      "title": {
+        "en": "Text classification and topics",
+        "tr": "Metin sınıflandırma ve konular"
+      },
+      "description": {
+        "en": "Classify supplied text and inspect topic detection candidates.",
+        "tr": "Verilen metni sınıflandır ve konu tespiti adaylarını incele."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "sentiment",
+      "category": "analysis",
+      "title": {
+        "en": "Sentiment candidates",
+        "tr": "Duygu analizi adayları"
+      },
+      "description": {
+        "en": "Run supported sentiment analysis and retrieve evidence-linked candidates.",
+        "tr": "Desteklenen duygu analizini çalıştır ve kanıta bağlı adayları getir."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "semantic-search",
+      "category": "analysis",
+      "title": {
+        "en": "Text embeddings and semantic search",
+        "tr": "Metin vektörleri ve anlamsal arama"
+      },
+      "description": {
+        "en": "Embed supported text and search indexed passages by semantic similarity.",
+        "tr": "Desteklenen metnin vektörünü çıkar ve indeksli pasajlarda anlamsal benzerlikle ara."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "rag",
+      "category": "analysis",
+      "title": {
+        "en": "Retrieval-augmented answers",
+        "tr": "Erişim destekli yanıtlar"
+      },
+      "description": {
+        "en": "Ingest supported passages, query them and inspect stored answer history.",
+        "tr": "Desteklenen pasajları al, sorgula ve saklanan yanıt geçmişini incele."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "summaries",
+      "category": "analysis",
+      "title": {
+        "en": "Summaries and enrichment",
+        "tr": "Özetler ve zenginleştirme"
+      },
+      "description": {
+        "en": "Use configured summarization and enrichment workflows on authorized content.",
+        "tr": "Yetkili içerikte yapılandırılmış özetleme ve zenginleştirme akışlarını kullan."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "analyst-review",
+      "category": "analysis",
+      "title": {
+        "en": "Analyst review queue",
+        "tr": "Analist inceleme kuyruğu"
+      },
+      "description": {
+        "en": "Inspect analysis candidates and record confirmation or rejection.",
+        "tr": "Analiz adaylarını incele ve onay veya ret kararını kaydet."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "explanation",
+      "category": "analysis",
+      "title": {
+        "en": "Explainability and grounding checks",
+        "tr": "Açıklanabilirlik ve kaynağa dayandırma"
+      },
+      "description": {
+        "en": "Inspect supported explanations and grounding assessment for generated answers.",
+        "tr": "Üretilen yanıtların desteklenen açıklamalarını ve kaynağa dayandırma değerlendirmesini incele."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Grounding checks reduce uncertainty but do not guarantee correctness or absence of hallucination.",
+        "tr": "Kaynağa dayandırma kontrolleri belirsizliği azaltabilir; doğruluk veya hatalı üretimin yokluğunu garanti etmez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "query-preview",
+      "category": "analysis",
+      "title": {
+        "en": "Natural-language query preview",
+        "tr": "Doğal dil sorgu önizlemesi"
+      },
+      "description": {
+        "en": "Generate supported text-to-query previews for inspection.",
+        "tr": "İncelemek için desteklenen metinden sorgu önizlemeleri üret."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "A generated query preview is not automatic query execution or authorization.",
+        "tr": "Üretilen sorgu önizlemesi otomatik sorgu çalıştırma veya yetkilendirme değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "activity-hints",
+      "category": "analysis",
+      "title": {
+        "en": "Activity and contextual hints",
+        "tr": "Faaliyet ve bağlamsal ipuçları"
+      },
+      "description": {
+        "en": "Generate supported activity/classification and contextual enrichment hints.",
+        "tr": "Desteklenen faaliyet/sınıflandırma ve bağlamsal zenginleştirme ipuçları üret."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Inferred interests, occupations or context are uncertain hints, not verified personal attributes.",
+        "tr": "Çıkarılan ilgi, meslek veya bağlam belirsiz ipuçlarıdır; doğrulanmış kişisel özellik değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "community-explanations",
+      "category": "analysis",
+      "title": {
+        "en": "Graph-community explanations",
+        "tr": "Grafik topluluğu açıklamaları"
+      },
+      "description": {
+        "en": "Explain supported graph-community groupings for analyst review.",
+        "tr": "Analist incelemesi için desteklenen grafik topluluğu gruplamalarını açıkla."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "suggestions",
+      "category": "analysis",
+      "title": {
+        "en": "Investigation suggestions",
+        "tr": "Soruşturma önerileri"
+      },
+      "description": {
+        "en": "Generate supported next-step suggestions from supplied investigation context.",
+        "tr": "Verilen soruşturma bağlamından desteklenen sonraki adım önerileri üret."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "translation",
+      "category": "analysis",
+      "title": {
+        "en": "Multilingual preparation and translation",
+        "tr": "Çok dilli hazırlık ve çeviri"
+      },
+      "description": {
+        "en": "Prepare supported multilingual processing and translate supported report sections.",
+        "tr": "Desteklenen çok dilli işlemeyi hazırla ve desteklenen rapor bölümlerini çevir."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Language and report-section support depend on the selected runtime; outputs need review.",
+        "tr": "Dil ve rapor bölümü desteği seçilen ortama bağlıdır; çıktılar inceleme gerektirir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "feedback",
+      "category": "analysis",
+      "title": {
+        "en": "Active-learning feedback",
+        "tr": "Aktif öğrenme geri bildirimi"
+      },
+      "description": {
+        "en": "Record analyst feedback and retrieve feedback reports for supported workflows.",
+        "tr": "Desteklenen akışlarda analist geri bildirimini kaydet ve geri bildirim raporlarını getir."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Recording feedback does not by itself retrain a model or prove accuracy improvement.",
+        "tr": "Geri bildirim kaydı tek başına modeli yeniden eğitmez veya doğruluk artışını kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "fusion",
+      "category": "analysis",
+      "title": {
+        "en": "Evidence fusion",
+        "tr": "Kanıt füzyonu"
+      },
+      "description": {
+        "en": "Combine supported multi-source/model signals into reviewable evidence-fusion output.",
+        "tr": "Desteklenen çok kaynaklı/model sinyallerini incelenebilir kanıt füzyonu çıktısında birleştir."
+      },
+      "requirements": {
+        "en": "Configured local algorithms or model/provider adapters, indexed data and authorized egress policy.",
+        "tr": "Yapılandırılmış yerel algoritmalar veya model/sağlayıcı adaptörleri, indeksli veri ve yetkili veri çıkış politikası."
+      },
+      "limit": {
+        "en": "Combined scores remain model- and input-dependent and are not identity certainty.",
+        "tr": "Birleşik skorlar model ve girdiye bağlı kalır; kesin kimlik sonucu değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "watchlists",
+      "category": "automation",
+      "title": {
+        "en": "Watchlists",
+        "tr": "İzleme listeleri"
+      },
+      "description": {
+        "en": "Create, enable/disable and inspect due watchlist definitions.",
+        "tr": "İzleme listesi tanımları oluştur, etkinleştir/kapat ve zamanı gelenleri incele."
+      },
+      "requirements": {
+        "en": "Configured scheduler/workers, event inputs, case data and supported output dependencies.",
+        "tr": "Yapılandırılmış zamanlayıcı/işçiler, olay girdileri, vaka verileri ve desteklenen çıktı bağımlılıkları."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "alerts",
+      "category": "automation",
+      "title": {
+        "en": "Alert evaluation and acknowledgement",
+        "tr": "Uyarı değerlendirme ve onayı"
+      },
+      "description": {
+        "en": "Evaluate supported alert rules and acknowledge generated alerts.",
+        "tr": "Desteklenen uyarı kurallarını değerlendir ve üretilen uyarıları onayla."
+      },
+      "requirements": {
+        "en": "Configured scheduler/workers, event inputs, case data and supported output dependencies.",
+        "tr": "Yapılandırılmış zamanlayıcı/işçiler, olay girdileri, vaka verileri ve desteklenen çıktı bağımlılıkları."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "tasks-notifications",
+      "category": "automation",
+      "title": {
+        "en": "Tasks and notifications",
+        "tr": "Görevler ve bildirimler"
+      },
+      "description": {
+        "en": "Maintain supported analyst tasks, notifications and automation definitions.",
+        "tr": "Desteklenen analist görevlerini, bildirimleri ve otomasyon tanımlarını yönet."
+      },
+      "requirements": {
+        "en": "Configured scheduler/workers, event inputs, case data and supported output dependencies.",
+        "tr": "Yapılandırılmış zamanlayıcı/işçiler, olay girdileri, vaka verileri ve desteklenen çıktı bağımlılıkları."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "case-reports",
+      "category": "automation",
+      "title": {
+        "en": "Case-scoped reports",
+        "tr": "Vaka kapsamlı raporlar"
+      },
+      "description": {
+        "en": "Generate supported relationship, source, timeline and other structured investigation reports.",
+        "tr": "Desteklenen ilişki, kaynak, zaman çizelgesi ve diğer yapılandırılmış soruşturma raporlarını üret."
+      },
+      "requirements": {
+        "en": "Configured scheduler/workers, event inputs, case data and supported output dependencies.",
+        "tr": "Yapılandırılmış zamanlayıcı/işçiler, olay girdileri, vaka verileri ve desteklenen çıktı bağımlılıkları."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "stix",
+      "category": "automation",
+      "title": {
+        "en": "Structured intelligence export",
+        "tr": "Yapılandırılmış istihbarat aktarımı"
+      },
+      "description": {
+        "en": "Export supported investigation intelligence through the STIX surface.",
+        "tr": "STIX yüzeyi üzerinden desteklenen soruşturma istihbaratını dışa aktar."
+      },
+      "requirements": {
+        "en": "Configured scheduler/workers, event inputs, case data and supported output dependencies.",
+        "tr": "Yapılandırılmış zamanlayıcı/işçiler, olay girdileri, vaka verileri ve desteklenen çıktı bağımlılıkları."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "rbac",
+      "category": "governance",
+      "title": {
+        "en": "Roles and access checks",
+        "tr": "Roller ve erişim kontrolleri"
+      },
+      "description": {
+        "en": "Manage supported role/permission checks and access-control records.",
+        "tr": "Desteklenen rol/izin kontrollerini ve erişim kayıtlarını yönet."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "compliance",
+      "category": "governance",
+      "title": {
+        "en": "Retention, purposes and erasure workflows",
+        "tr": "Saklama, amaç ve silme akışları"
+      },
+      "description": {
+        "en": "Manage supported retention policies, purpose records, checklist reviews, access grants and erasure requests.",
+        "tr": "Desteklenen saklama politikalarını, amaç kayıtlarını, kontrol listesi incelemelerini, erişim yetkilerini ve silme taleplerini yönet."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Governance tooling does not certify legal compliance or replace organization-specific review.",
+        "tr": "Yönetişim araçları yasal uyumluluk sertifikası sağlamaz veya kuruma özgü incelemenin yerini almaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "policy-audit",
+      "category": "governance",
+      "title": {
+        "en": "Policy evaluation and audit",
+        "tr": "Politika değerlendirme ve denetim"
+      },
+      "description": {
+        "en": "Store/evaluate policies and inspect supported audit information.",
+        "tr": "Politikaları sakla/değerlendir ve desteklenen denetim bilgisini incele."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "tenants",
+      "category": "governance",
+      "title": {
+        "en": "Tenants, workspaces and organizations",
+        "tr": "Tenant, çalışma alanı ve kuruluşlar"
+      },
+      "description": {
+        "en": "Manage supported tenant/workspace/organization records and scoped configuration.",
+        "tr": "Desteklenen tenant/çalışma alanı/kuruluş kayıtlarını ve kapsamlı yapılandırmayı yönet."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "enterprise-config",
+      "category": "governance",
+      "title": {
+        "en": "SSO initiation and quota configuration",
+        "tr": "SSO başlatma ve kota yapılandırması"
+      },
+      "description": {
+        "en": "Expose supported identity-provider, sign-in initiation and quota configuration surfaces.",
+        "tr": "Desteklenen kimlik sağlayıcı, oturum başlatma ve kota yapılandırma yüzeylerini sun."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "A configuration or sign-in initiation surface is not certification of every enterprise SSO deployment.",
+        "tr": "Yapılandırma veya oturum başlatma yüzeyi her kurumsal SSO kurulumunun doğrulandığı anlamına gelmez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "workspace-licenses",
+      "category": "governance",
+      "title": {
+        "en": "Workspace license evaluation",
+        "tr": "Çalışma alanı lisans değerlendirmesi"
+      },
+      "description": {
+        "en": "Manage and evaluate supported workspace-level license records.",
+        "tr": "Desteklenen çalışma alanı lisans kayıtlarını yönet ve değerlendir."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "product-license",
+      "category": "governance",
+      "title": {
+        "en": "Native product-license verification",
+        "tr": "Yerel ürün lisansı doğrulaması"
+      },
+      "description": {
+        "en": "Inspect activation/status/details and supported deactivation through the full application verifier.",
+        "tr": "Tam uygulama doğrulayıcısıyla etkinleştirme/durum/ayrıntı ve desteklenen devre dışı bırakmayı incele."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "This is the application verification surface. Private seller signing tools and keys are not published or modified.",
+        "tr": "Bu uygulamanın doğrulama yüzeyidir. Özel lisans imzalama araçları ve anahtarlar yayımlanmaz veya değiştirilmez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "integrity-usage",
+      "category": "governance",
+      "title": {
+        "en": "Usage integrity signals",
+        "tr": "Kullanım bütünlüğü sinyalleri"
+      },
+      "description": {
+        "en": "Inspect supported usage-integrity alerts and associated operational context.",
+        "tr": "Desteklenen kullanım bütünlüğü uyarılarını ve ilgili işletim bağlamını incele."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "diagnostics",
+      "category": "governance",
+      "title": {
+        "en": "Health, metrics and observability",
+        "tr": "Sağlık, metrikler ve gözlemlenebilirlik"
+      },
+      "description": {
+        "en": "Inspect supported health, metrics, administration overviews and runtime capability registration.",
+        "tr": "Desteklenen sağlık, metrik, yönetim özetleri ve çalışma ortamı yetenek kayıtlarını incele."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Health and adapter registration do not establish end-to-end provider validity or production readiness.",
+        "tr": "Sağlık ve adaptör kaydı uçtan uca sağlayıcı geçerliliğini veya üretime hazır olmayı kanıtlamaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "onboarding",
+      "category": "governance",
+      "title": {
+        "en": "Onboarding surfaces",
+        "tr": "Başlangıç yapılandırma yüzeyleri"
+      },
+      "description": {
+        "en": "Use supported onboarding and environment setup information.",
+        "tr": "Desteklenen başlangıç ve ortam kurulum bilgisini kullan."
+      },
+      "requirements": {
+        "en": "Configured identity, storage, permission and deployment policy; qualified organizational review where needed.",
+        "tr": "Yapılandırılmış kimlik, depolama, izin ve dağıtım politikası; gerektiğinde yetkin kurumsal inceleme."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "plugins",
+      "category": "extensions",
+      "title": {
+        "en": "Plugin versions and compatibility",
+        "tr": "Eklenti sürümleri ve uyumluluk"
+      },
+      "description": {
+        "en": "Register versions, inspect compatible releases and review upgrade plans.",
+        "tr": "Sürüm kaydet, uyumlu yayınları incele ve yükseltme planlarını gözden geçir."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "plugin-review",
+      "category": "extensions",
+      "title": {
+        "en": "Plugin certification and static review",
+        "tr": "Eklenti sertifikasyon kaydı ve statik inceleme"
+      },
+      "description": {
+        "en": "Inspect supported certification recommendations/decisions, static scans and sandbox benchmarks.",
+        "tr": "Desteklenen sertifikasyon öneri/kararlarını, statik taramaları ve sandbox ölçümlerini incele."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "Internal certification records and sandbox results are not a guarantee that arbitrary plugin code is safe.",
+        "tr": "İç sertifikasyon kayıtları ve sandbox sonuçları rastgele eklenti kodunun güvenli olduğunu garanti etmez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "supply-chain",
+      "category": "extensions",
+      "title": {
+        "en": "Supply-chain checks",
+        "tr": "Tedarik zinciri kontrolleri"
+      },
+      "description": {
+        "en": "Export supported SBOMs and inspect model signatures, known-hash checks and plugin scan results.",
+        "tr": "Desteklenen SBOM çıktıları üret; model imzalarını, bilinen hash kontrollerini ve eklenti tarama sonuçlarını incele."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "research-registry",
+      "category": "extensions",
+      "title": {
+        "en": "Research and experiment workspaces",
+        "tr": "Araştırma çalışma alanları"
+      },
+      "description": {
+        "en": "Register and inspect supported research workspace revisions and entries.",
+        "tr": "Desteklenen araştırma çalışma alanı revizyonlarını ve girdilerini kaydet ve incele."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "Source-reviewed capability; this catalogue does not include a published execution of this operation.",
+        "tr": "Kodda incelenen yetenek; bu katalog bu işlemin yayımlanmış çalıştırma kanıtını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "ideas-roadmap",
+      "category": "extensions",
+      "title": {
+        "en": "Ideas, contributions and planning",
+        "tr": "Fikirler, katkılar ve planlama"
+      },
+      "description": {
+        "en": "Maintain idea, contribution and roadmap records through the supported platform APIs.",
+        "tr": "Desteklenen platform API yüzeyleriyle fikir, katkı ve yol haritası kayıtlarını yönet."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "These API surfaces are not a promise of a public community service or autonomous product development.",
+        "tr": "Bu API yüzeyleri açık bir topluluk servisi veya otonom ürün geliştirme vaadi değildir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "optimization",
+      "category": "extensions",
+      "title": {
+        "en": "Optimization recommendations",
+        "tr": "Optimizasyon önerileri"
+      },
+      "description": {
+        "en": "Inspect supported target analysis and recommendation records.",
+        "tr": "Desteklenen hedef analizini ve öneri kayıtlarını incele."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "Recommendations are not measured performance improvements until separately tested.",
+        "tr": "Öneriler ayrıca test edilmeden ölçülmüş performans artışı sayılmaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "integration-surfaces",
+      "category": "extensions",
+      "title": {
+        "en": "REST, CLI, SDK and browser extension",
+        "tr": "REST, CLI, SDK ve tarayıcı eklentisi"
+      },
+      "description": {
+        "en": "Access supported application workflows through API/CLI and provided integration components.",
+        "tr": "Desteklenen uygulama akışlarına API/CLI ve sağlanan entegrasyon bileşenleriyle eriş."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "An API-only workflow may not have a dedicated polished frontend page. The public website does not include the private integration source.",
+        "tr": "Yalnız API üzerinden sunulan akışın özel bir görsel sayfası bulunmayabilir. Public web sitesi özel entegrasyon kaynaklarını içermez."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "deployment-assets",
+      "category": "extensions",
+      "title": {
+        "en": "Frontend, backend and deployment assets",
+        "tr": "Arayüz, backend ve dağıtım dosyaları"
+      },
+      "description": {
+        "en": "The private application has React/Vite frontend, Python services and Docker/Compose deployment assets.",
+        "tr": "Özel uygulamada React/Vite arayüzü, Python servisleri ve Docker/Compose dağıtım dosyaları bulunur."
+      },
+      "requirements": {
+        "en": "Configured plugin runtime or platform services; external binaries, credentials and policies as needed.",
+        "tr": "Yapılandırılmış eklenti ortamı veya platform servisleri; gerektiğinde dış ikililer, erişim ve politikalar."
+      },
+      "limit": {
+        "en": "Hardware sizing, complete installation and multi-user production load need environment-specific validation.",
+        "tr": "Donanım boyutlandırması, tam kurulum ve çok kullanıcılı üretim yükü ortama özgü doğrulama gerektirir."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "onion",
+      "category": "restricted-sources",
+      "title": {
+        "en": "Onion/I2P availability checks",
+        "tr": "Onion/I2P erişilebilirlik kontrolleri"
+      },
+      "description": {
+        "en": "Check supported configured endpoints for availability.",
+        "tr": "Desteklenen yapılandırılmış uç noktaların erişilebilirliğini kontrol et."
+      },
+      "requirements": {
+        "en": "Permitted source access, appropriate proxy/network routing and configured collectors.",
+        "tr": "İzinli kaynak erişimi, uygun proxy/ağ yönlendirmesi ve yapılandırılmış toplayıcılar."
+      },
+      "limit": {
+        "en": "Availability does not authenticate a service or establish safe content; the website performs no live crawl.",
+        "tr": "Erişilebilirlik servis kimliğini veya güvenli içeriği doğrulamaz; web sitesi canlı tarama yapmaz."
+      },
+      "evidence": "code"
+    },
+    {
+      "id": "paste",
+      "category": "restricted-sources",
+      "title": {
+        "en": "Paste-site monitoring",
+        "tr": "Paste sitesi izleme"
+      },
+      "description": {
+        "en": "Request supported monitoring observations from a configured source.",
+        "tr": "Yapılandırılmış kaynaktan desteklenen izleme gözlemlerini iste."
+      },
+      "requirements": {
+        "en": "Permitted source access, appropriate proxy/network routing and configured collectors.",
+        "tr": "İzinli kaynak erişimi, uygun proxy/ağ yönlendirmesi ve yapılandırılmış toplayıcılar."
+      },
+      "limit": {
+        "en": "Coverage depends on the source; this is not complete dark-web indexing or private-content access.",
+        "tr": "Kapsam kaynağa bağlıdır; tam dark web indeksleme veya özel içeriğe erişim değildir."
+      },
+      "evidence": "code"
+    }
+  ],
+  "modelStudioCatalog": [
+    {
+      "id": "face",
+      "name": "Face",
+      "actions": [
+        {
+          "id": "train_scratch",
+          "title": {
+            "en": "Train from scratch",
+            "tr": "Sıfırdan eğitim"
+          }
+        },
+        {
+          "id": "fine_tune",
+          "title": {
+            "en": "Fine-tune",
+            "tr": "İnce ayar"
+          }
+        },
+        {
+          "id": "evaluate",
+          "title": {
+            "en": "Evaluate",
+            "tr": "Değerlendirme"
+          }
+        },
+        {
+          "id": "export_onnx",
+          "title": {
+            "en": "Export ONNX",
+            "tr": "ONNX aktarımı"
+          }
+        },
+        {
+          "id": "preprocess",
+          "title": {
+            "en": "Preprocess / align",
+            "tr": "Ön işleme / hizalama"
+          }
+        },
+        {
+          "id": "build_database",
+          "title": {
+            "en": "Build gallery database",
+            "tr": "Galeri veritabanı kurma"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iris",
+      "name": "Iris",
+      "actions": [
+        {
+          "id": "train_scratch",
+          "title": {
+            "en": "Train from scratch",
+            "tr": "Sıfırdan eğitim"
+          }
+        },
+        {
+          "id": "fine_tune",
+          "title": {
+            "en": "Fine-tune",
+            "tr": "İnce ayar"
+          }
+        },
+        {
+          "id": "metric_train",
+          "title": {
+            "en": "Metric training",
+            "tr": "Metrik eğitim"
+          }
+        },
+        {
+          "id": "evaluate",
+          "title": {
+            "en": "Evaluate",
+            "tr": "Değerlendirme"
+          }
+        },
+        {
+          "id": "benchmark",
+          "title": {
+            "en": "Benchmark",
+            "tr": "Ölçüm"
+          }
+        },
+        {
+          "id": "export_onnx",
+          "title": {
+            "en": "Export ONNX",
+            "tr": "ONNX aktarımı"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fingerprint",
+      "name": "Fingerprint",
+      "actions": [
+        {
+          "id": "train_scratch",
+          "title": {
+            "en": "Train from scratch",
+            "tr": "Sıfırdan eğitim"
+          }
+        },
+        {
+          "id": "fine_tune",
+          "title": {
+            "en": "Fine-tune",
+            "tr": "İnce ayar"
+          }
+        },
+        {
+          "id": "export_onnx",
+          "title": {
+            "en": "Export ONNX",
+            "tr": "ONNX aktarımı"
+          }
+        },
+        {
+          "id": "quality",
+          "title": {
+            "en": "Quality tool",
+            "tr": "Kalite aracı"
+          }
+        }
+      ]
+    },
+    {
+      "id": "voiceprint",
+      "name": "Voiceprint",
+      "actions": [
+        {
+          "id": "train_scratch",
+          "title": {
+            "en": "Train from scratch",
+            "tr": "Sıfırdan eğitim"
+          }
+        },
+        {
+          "id": "fine_tune",
+          "title": {
+            "en": "Fine-tune",
+            "tr": "İnce ayar"
+          }
+        },
+        {
+          "id": "calibrate_threshold",
+          "title": {
+            "en": "Calibrate threshold",
+            "tr": "Eşik kalibrasyonu"
+          }
+        },
+        {
+          "id": "export_onnx",
+          "title": {
+            "en": "Export ONNX",
+            "tr": "ONNX aktarımı"
+          }
+        }
+      ]
+    },
+    {
+      "id": "writer-id",
+      "name": "Writer-ID",
+      "actions": [
+        {
+          "id": "train_scratch",
+          "title": {
+            "en": "Train from scratch",
+            "tr": "Sıfırdan eğitim"
+          }
+        },
+        {
+          "id": "fine_tune",
+          "title": {
+            "en": "Fine-tune",
+            "tr": "İnce ayar"
+          }
+        },
+        {
+          "id": "evaluate",
+          "title": {
+            "en": "Evaluate",
+            "tr": "Değerlendirme"
+          }
+        },
+        {
+          "id": "mine_hard_negatives",
+          "title": {
+            "en": "Mine hard negatives",
+            "tr": "Zor negatif çıkarımı"
+          }
+        },
+        {
+          "id": "export_onnx",
+          "title": {
+            "en": "Export ONNX",
+            "tr": "ONNX aktarımı"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gait",
+      "name": "Gait",
+      "actions": [
+        {
+          "id": "train_scratch",
+          "title": {
+            "en": "Train from scratch",
+            "tr": "Sıfırdan eğitim"
+          }
+        },
+        {
+          "id": "fine_tune",
+          "title": {
+            "en": "Fine-tune",
+            "tr": "İnce ayar"
+          }
+        },
+        {
+          "id": "zero_shot",
+          "title": {
+            "en": "Zero-shot run",
+            "tr": "Sıfır örnek çalışması"
+          }
+        },
+        {
+          "id": "evaluate",
+          "title": {
+            "en": "Evaluate",
+            "tr": "Değerlendirme"
+          }
+        },
+        {
+          "id": "cross_view_eval",
+          "title": {
+            "en": "Cross-view evaluation",
+            "tr": "Açılar arası değerlendirme"
+          }
+        },
+        {
+          "id": "visualize_embeddings",
+          "title": {
+            "en": "Visualize embeddings",
+            "tr": "Vektör görselleştirme"
+          }
+        },
+        {
+          "id": "export_onnx",
+          "title": {
+            "en": "Export ONNX",
+            "tr": "ONNX aktarımı"
+          }
+        }
+      ]
+    }
+  ]
+}
