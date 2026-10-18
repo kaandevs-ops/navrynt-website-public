@@ -42,3 +42,7 @@ The six-modality GIF shows actual static-demo tabs with fictional examples, with
 ## Website capture refresh
 
 The four website README PNGs were captured from this release on 18 October 2026. Desktop viewport: 1280 × 720; mobile: 390 × 844. The demo GIF documents earlier browser interactions and may show an earlier navigation layout; its fictional-data boundary is unchanged. [All included media checksums](MEDIA-SHA256.json) cover recordings, previews and README illustrations.
+
+## Feature catalogue screenshots
+
+`features.png` and `features-evidence.png` show actual browser interactions with the bilingual feature catalogue added on 18 October 2026. The evidence view filters to the single published voice enrollment/comparison entry; its dependency and research-limit text remains visible. Homepage/mobile stills were refreshed for the new navigation. Earlier library/biometric stills may show the prior header layout. These documentation screenshots are not new model or provider execution evidence.

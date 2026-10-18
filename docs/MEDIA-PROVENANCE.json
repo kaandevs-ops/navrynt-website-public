@@ -6,7 +6,9 @@
       "home.png",
       "library.png",
       "biometrics.png",
-      "mobile.png"
+      "mobile.png",
+      "features.png",
+      "features-evidence.png"
     ],
     "desktop_viewport": "1280 x 720",
     "mobile_viewport": "390 x 844"
@@ -20,5 +22,6 @@
     "original_capture_rate": "Generally 3-4 fps",
     "audio": false
   },
-  "boundaries": "The public website plays files and does not execute intelligence providers or biometric models."
+  "boundaries": "The public website plays files and does not execute intelligence providers or biometric models.",
+  "feature_catalogue_capture": "Actual bilingual feature catalogue and a filtered historical voice-recording entry. No new model or provider operation is represented as running."
 }
