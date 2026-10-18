@@ -14,7 +14,7 @@ for (const link of $$('a[href]')) {
  }
 }
 
-const menu = $('.web-menu'), nav = $('#web-navigation'), mobile = matchMedia('(max-width:850px)');
+const menu = $('.web-menu'), nav = $('#web-navigation'), mobile = matchMedia('(max-width:1000px)');
 let menuOpen = false;
 function setMenu(open, restore=false){
  menuOpen = Boolean(open && mobile.matches);
